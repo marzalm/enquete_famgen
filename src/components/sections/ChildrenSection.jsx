@@ -96,7 +96,7 @@ const ChildrenSection = () => {
           </ResponsiveContainer>
         </div>
         
-        <AnimatedSection delay={1500}>
+        <AnimatedSection delay={600}>
           <div className="mt-8 text-gray-700 space-y-4">
             <p>En 2023, le nombre d'enfants souhaités par les personnes âgées de 20 à 35 ans (sans enfants) est proportionnel au nombre d'enfants des individus âgés de 50 à 65 ans. La majorité des 20-35 ans souhaitent avoir deux enfants (47%), tandis que ceux ne désirant qu'un seul enfant constituent la plus faible proportion (12%).</p>
           </div>
@@ -150,7 +150,7 @@ const ChildrenSection = () => {
           </ResponsiveContainer>
         </div>
         
-        <AnimatedSection delay={1500}>
+        <AnimatedSection delay={600}>
           <div className="mt-8 text-gray-700 space-y-4">
             <p>Le nombre d'enfants souhaités a évolué en Suisse entre 2013 et 2023. La transformation la plus marquante concerne la proportion de personnes ne souhaitant pas avoir d'enfants, qui est passée de 9% en 2013 à 22% en 2023.</p>
             <p>Cette tendance générale à la baisse du souhait d'enfants se reflète dans toutes les configurations, sauf pour ceux qui souhaitent un seul enfant, où une augmentation est observée entre 2013 et 2023.</p>
@@ -205,7 +205,7 @@ const ChildrenSection = () => {
           </ResponsiveContainer>
         </div>
         
-        <AnimatedSection delay={1500}>
+        <AnimatedSection delay={600}>
           <div className="mt-8 text-gray-700 space-y-4">
             <p>Dans le canton de Genève, la majorité des personnes âgées de 25 à 39 ans sans enfants estiment que devenir parents améliorerait leur satisfaction de vie (55%). Cependant, 43% de ces individus jugent que l'arrivée d'un enfant nuirait à leurs perspectives professionnelles.</p>
           </div>
