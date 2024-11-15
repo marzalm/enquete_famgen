@@ -12,8 +12,21 @@ const SurveyPresentation = () => {
    {
      title: "Enquête sur les familles et les générations 2023",
      subtitle: "Résultats pour le canton de Genève",
-     content: "Cette enquête quinquennale fournit des résultats sur l'état actuel et l'évolution des familles ainsi que sur les relations entre les générations.",
-     icon: (
+     content: (
+        <>
+          Cette enquête quinquennale fournit des résultats sur l'état actuel et l'évolution des familles ainsi que sur les relations entre les générations. <br />
+             
+          <a 
+            href="https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/enquetes/efg.html" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-blue-500 underline"
+          >
+             Plus d'information ici.
+          </a>
+        </>
+      ),
+      icon: (
        <img 
          src="/animations/family.gif"
          alt="Family animation"
