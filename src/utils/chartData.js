@@ -92,3 +92,46 @@ export const childrenData = {
     { aspect: 'Perspectives professionnelles', ameliore: 12, stable: 45, deteriore: 43 }
   ]
 };
+
+export const houseworkData = {
+  // Evolution over years
+  evolution: [
+    { year: '2013', femme: 65, partage: 27, homme: 8 },
+    { year: '2018', femme: 58, partage: 35, homme: 7 },
+    { year: '2023', femme: 41, partage: 53, homme: 6 }
+  ],
+
+  // Tasks distribution 2023
+  tasks2023: [
+    { task: 'Lessive', femme: 54, partage: 39, homme: 7 },
+    { task: 'Cadeaux', femme: 54, partage: 40, homme: 6 },
+    { task: 'Repas', femme: 46, partage: 42, homme: 12 },
+    { task: 'Nettoyage', femme: 42, partage: 44, homme: 14 },
+    { task: 'Courses', femme: 32, partage: 56, homme: 12 },
+    { task: 'Administration', femme: 35, partage: 22, homme: 43 },
+    { task: 'Réparations', femme: 12, partage: 20, homme: 68 }
+  ],
+
+  // Childcare distribution 2023
+  childcare2023: [
+    { task: 'Enfant malade', femme: 56, partage: 38, homme: 6 },
+    { task: 'Habiller', femme: 49, partage: 45, homme: 6 },
+    { task: 'Devoirs', femme: 41, partage: 49, homme: 10 },
+    { task: 'Transport', femme: 34, partage: 56, homme: 10 },
+    { task: 'Coucher', femme: 25, partage: 65, homme: 10 },
+    { task: 'Jouer', femme: 17, partage: 73, homme: 10 }
+  ],
+
+  // Satisfaction by household type
+  satisfactionByHousehold: [
+    { type: 'Avec enfants', tresSatisfait: 46, satisfait: 42, nonSatisfait: 12 },
+    { type: 'Sans enfants', tresSatisfait: 51, satisfait: 41, nonSatisfait: 8 }
+  ],
+
+  // Satisfaction by education level
+  satisfactionByEducation: [
+    { level: 'Tertiaire', tresSatisfait: 53, satisfait: 37, nonSatisfait: 10 },
+    { level: 'Secondaire II', tresSatisfait: 65, satisfait: 29, nonSatisfait: 6 },
+    { level: 'Secondaire I', tresSatisfait: 65, satisfait: 28, nonSatisfait: 7 }
+  ]
+};
