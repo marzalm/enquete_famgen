@@ -1,3 +1,4 @@
+// src/components/SurveyPresentation.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowDownCircle, ArrowUpCircle, Menu, X } from 'lucide-react';
 import CouplesSection from './sections/CouplesSection';
@@ -53,6 +54,20 @@ const SurveyPresentation = () => {
 
   return (
     <div className="relative min-h-screen bg-orange-50">
+      {/* Fixed Logo */}
+      <div className="fixed top-8 left-8 z-50">
+        <img 
+          src="/images/logo.gif" 
+          alt="Statistique Genève" 
+          className="w-32 h-auto fixed-logo"
+        />
+      </div>
+
+      {/* Fixed Copyright Notice */}
+      <div className="fixed bottom-8 left-8 z-50 text-sm text-gray-600 copyright-text">
+        © 2024 - OFS / OCSTAT
+      </div>
+
       {/* Navigation Menu Button */}
       <button
         onClick={() => setMenuOpen(!menuOpen)}
