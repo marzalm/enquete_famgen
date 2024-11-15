@@ -1,7 +1,7 @@
-// src/components/SurveyPresentation.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowDownCircle, ArrowUpCircle, Menu, X } from 'lucide-react';
 import CouplesSection from './sections/CouplesSection';
+import ChildrenSection from './sections/ChildrenSection';
 
 const SurveyPresentation = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -22,6 +22,13 @@ const SurveyPresentation = () => {
       content: "À Genève, 68% des individus âgés de 18 à 80 ans sont en couple. Les dynamiques varient selon l'âge, le sexe et le niveau d'éducation.",
       icon: "👥",
       component: <CouplesSection />
+    },
+    {
+      title: "Les enfants",
+      subtitle: "Désirs d'enfants et effets de la parentalité",
+      content: "Le nombre d'enfants souhaités et les effets de la parentalité varient selon différents facteurs sociodémographiques.",
+      icon: "👶",
+      component: <ChildrenSection />
     }
   ];
 

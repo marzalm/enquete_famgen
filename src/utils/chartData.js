@@ -71,3 +71,24 @@ export const coupleData = {
     }
   ]
 };
+
+export const childrenData = {
+  // "Souhait d'enfants et nombre d'enfants"
+  actualAndDesired: [
+    { group: '20-35 ans sans enfants', '0 enfant': 22, '1 enfant': 12, '2 enfants': 47, '3 enfants ou plus': 19 },
+    { group: '50-65 ans', '0 enfant': 20, '1 enfant': 13, '2 enfants': 45, '3 enfants ou plus': 22 }
+  ],
+
+  // "Évolution du nombre d'enfants souhaités" 
+  desiredEvolution: [
+    { year: '2013', '0 enfant': 9, '1 enfant': 7, '2 enfants': 54, '3 enfants ou plus': 30 },
+    { year: '2018', '0 enfant': 15, '1 enfant': 9, '2 enfants': 51, '3 enfants ou plus': 25 },
+    { year: '2023', '0 enfant': 22, '1 enfant': 12, '2 enfants': 47, '3 enfants ou plus': 19 }
+  ],
+
+  // "Effet de la naissance d'un enfant"
+  birthEffect: [
+    { aspect: 'Satisfaction de vie', ameliore: 55, stable: 42, deteriore: 3 },
+    { aspect: 'Perspectives professionnelles', ameliore: 12, stable: 45, deteriore: 43 }
+  ]
+};
