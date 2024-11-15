@@ -73,49 +73,48 @@ const CouplesSection = () => {
     <div className="space-y-24">
       {/* Couples par âge et sexe */}
       <div ref={ref1}>
-        <AnimatedSection>
-          <h3 className="text-xl font-semibold mb-6">
-            Proportion des personnes en couple selon l'âge et le sexe
-          </h3>
-        </AnimatedSection>
-        
-        <div className="h-[400px] w-full">
-          <ResponsiveContainer>
-            <LineChart data={lineChartData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="age" />
-              <YAxis domain={[0, 100]} />
-              <Tooltip />
-              <Legend />
-              <Line 
-                type="linear" 
-                dataKey="femmes" 
-                stroke="#FF6B35" 
-                strokeWidth={2}
-                name="Femmes"
-                animationDuration={2000}
-                animationBegin={0}
-              />
-              <Line 
-                type="linear" 
-                dataKey="hommes" 
-                stroke="#4169E1" 
-                strokeWidth={2}
-                name="Hommes"
-                animationDuration={2000}
-                animationBegin={500}
-              />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-        
-        <AnimatedSection delay={2000}>
-          <div className="mt-8 text-gray-700 space-y-4">
-            <p>À Genève, 68% des individus âgés de 18 à 80 ans sont en couple. Les femmes âgées de 35 à 44 ans sont celles qui sont le plus souvent en couple (81%). Ce taux descend à 51% pour les femmes de 65 à 80 ans.</p>
-            <p>Il y a une inversion du rapport entre hommes et femmes en couple aux deux extrémités des groupes d'âge. Parmi les 25-34 ans, une proportion significativement plus élevée de femmes que d'hommes sont en couple (75% des femmes contre 58% des hommes). À l'inverse, chez les 65-80 ans, ce sont les hommes qui sont plus fréquemment en couple (76% des hommes contre 51% des femmes).</p>
-          </div>
-        </AnimatedSection>
-      </div>
+  <AnimatedSection>
+    <h3 className="text-xl font-semibold mb-6">
+      Proportion des personnes en couple selon l'âge et le sexe
+    </h3>
+  </AnimatedSection>
+  
+  <div className="h-[400px] w-full">
+    <ResponsiveContainer>
+      <BarChart 
+        data={isInView1 ? coupleData.couplesByAge : []}
+        margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="age" />
+        <YAxis domain={[0, 100]} />
+        <Tooltip />
+        <Legend />
+        <Bar 
+          dataKey="femmes" 
+          name="Femmes" 
+          fill="#FF6B35"
+          animationDuration={1500}
+          animationBegin={0}
+        />
+        <Bar 
+          dataKey="hommes" 
+          name="Hommes" 
+          fill="#4169E1"
+          animationDuration={1500}
+          animationBegin={300}
+        />
+      </BarChart>
+    </ResponsiveContainer>
+  </div>
+  
+  <AnimatedSection delay={1800}> {/* Increased delay to account for both bars animation */}
+    <div className="mt-8 text-gray-700 space-y-4">
+      <p>À Genève, 68% des individus âgés de 18 à 80 ans sont en couple. Les femmes âgées de 35 à 44 ans sont celles qui sont le plus souvent en couple (81%). Ce taux descend à 51% pour les femmes de 65 à 80 ans.</p>
+      <p>Il y a une inversion du rapport entre hommes et femmes en couple aux deux extrémités des groupes d'âge. Parmi les 25-34 ans, une proportion significativement plus élevée de femmes que d'hommes sont en couple (75% des femmes contre 58% des hommes). À l'inverse, chez les 65-80 ans, ce sont les hommes qui sont plus fréquemment en couple (76% des hommes contre 51% des femmes).</p>
+    </div>
+  </AnimatedSection>
+</div>
 
       {/* Différence d'âge */}
       <div ref={ref2}>

@@ -54,19 +54,27 @@ const SurveyPresentation = () => {
 
   return (
     <div className="relative min-h-screen bg-orange-50">
-      {/* Fixed Logo */}
-      <div className="fixed top-8 left-8 z-50">
-        <img 
-          src="/images/logo.gif" 
-          alt="Statistique Genève" 
-          className="w-32 h-auto fixed-logo"
-        />
-      </div>
+    {/* Fixed Logo Top Left */}
+    <div className="fixed top-8 left-8 z-50">
+      <img 
+        src="/images/logo.gif" 
+        alt="Statistique Genève" 
+        className="fixed-logo max-h-[100px] w-auto"
+      />
+    </div>
 
-      {/* Fixed Copyright Notice */}
-      <div className="fixed bottom-8 left-8 z-50 text-sm text-gray-600 copyright-text">
-        © 2024 - OFS / OCSTAT
-      </div>
+    {/* Fixed Bottom Elements */}
+    <div className="fixed bottom-8 left-8 z-50">
+      <img 
+        src="/images/logo_gen.png" 
+        alt="Canton de Genève" 
+        className="fixed-logo max-h-[80px] w-auto"
+      />
+    </div>
+    
+    <div className="fixed bottom-8 right-8 z-50">
+      <span className="copyright-text">© 2024 - OFS / OCSTAT</span>
+    </div>
 
       {/* Navigation Menu Button */}
       <button
