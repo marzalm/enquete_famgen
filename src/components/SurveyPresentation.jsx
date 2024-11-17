@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ArrowDownCircle, ArrowUpCircle, Menu, X } from 'lucide-react';
 import CouplesSection from './sections/CouplesSection';
 import ChildrenSection from './sections/ChildrenSection';
+import HouseworkSection from './sections/HouseworkSection';
+import InfoSection from './sections/InfoSection';
 
 const SurveyPresentation = () => {
  const [activeSlide, setActiveSlide] = useState(0);
@@ -60,7 +62,33 @@ const SurveyPresentation = () => {
         />
       ),
      component: <ChildrenSection />
-   }
+   },
+   {
+    title: "Répartition des tâches",
+    subtitle: "Tâches domestiques et soins aux enfants",
+    content: "La répartition des tâches domestiques et des soins aux enfants évolue vers plus d'égalité, mais des disparités persistent selon les types de tâches et les caractéristiques des ménages.",
+    icon: (
+      <img 
+        src="/animations/tache.gif"
+        alt="Task animation"
+        className="w-[150px] h-[150px] object-contain"
+      />
+    ),
+    component: <HouseworkSection />
+  },
+  {
+    title: "Plus d'informations",
+    subtitle: "Méthodologie et ressources supplémentaires",
+    content: "Découvrez plus de détails sur l'enquête et accédez à des analyses approfondies.",
+    icon: (
+      <img 
+        src="/animations/question.gif"
+        alt="Information animation"
+        className="w-[150px] h-[150px] object-contain"
+      />
+    ),
+    component: <InfoSection />
+  }
  ];
 
  useEffect(() => {
@@ -83,7 +111,13 @@ const SurveyPresentation = () => {
  }, []);
 
  return (
-   <div className="relative min-h-screen bg-orange-50">
+  <div className="relative min-h-screen" style={{
+    backgroundImage: 'url("/images/background.svg")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundAttachment: 'fixed',
+    backgroundRepeat: 'no-repeat'
+  }}>
      {/* Fixed Logo Top Left */}
      <div className="fixed top-8 left-8 z-50">
        <img 
@@ -123,32 +157,32 @@ const SurveyPresentation = () => {
          <h3 className="text-lg font-semibold mb-6">Navigation</h3>
          <div className="space-y-4">
          {sections.map((section, index) => (
- <button
-   key={index}
-   onClick={() => {
-     slidesRef.current[index].scrollIntoView({ behavior: 'smooth' });
-     setMenuOpen(false);
-   }}
-   className={`w-full text-left p-4 rounded-lg transition-all ${
-     activeSlide === index 
-       ? 'bg-orange-50 text-orange-600' 
-       : 'hover:bg-gray-50'
-   }`}
- >
-   <div className="flex items-center">
-     <div className="w-13 h-13 mr-3"> {/* Increased from w-8 h-8 to w-12 h-12 */}
-       <img 
-         src={`/animations/${index === 0 ? 'family' : index === 1 ? 'couple' : 'enfants'}.gif`}
-         alt={section.title}
-         className="w-full h-full object-contain"
-       />
-     </div>
-     <div>
-       <div className="font-medium">{section.title}</div>
-       <div className="text-sm text-gray-500">{section.subtitle}</div>
-     </div>
-   </div>
- </button>
+  <button
+    key={index}
+    onClick={() => {
+      slidesRef.current[index].scrollIntoView({ behavior: 'smooth' });
+      setMenuOpen(false);
+    }}
+    className={`w-full text-left p-4 rounded-lg transition-all ${
+      activeSlide === index 
+        ? 'bg-orange-50 text-orange-600' 
+        : 'hover:bg-gray-50'
+    }`}
+  >
+    <div className="flex items-center">
+      <div className="w-13 h-13 mr-3">
+        <img 
+          src={`/animations/${index === 0 ? 'family' : index === 1 ? 'couple' : index === 2 ? 'enfants' : 'tache'}.gif`}
+          alt={section.title}
+          className="w-full h-full object-contain"
+        />
+      </div>
+      <div>
+        <div className="font-medium">{section.title}</div>
+        <div className="text-sm text-gray-500">{section.subtitle}</div>
+      </div>
+    </div>
+  </button>
 ))}
          </div>
        </div>
@@ -162,9 +196,9 @@ const SurveyPresentation = () => {
            onClick={() => {
              slidesRef.current[index].scrollIntoView({ behavior: 'smooth' });
            }}
-           className={`w-3 h-3 rounded-full transition-all duration-300 ${
+           className={`w-5 h-5 rounded-full transition-all duration-300 ${
              activeSlide === index 
-               ? 'bg-orange-500 scale-125' 
+               ? 'bg-green-500 scale-125' 
                : 'bg-gray-300 hover:bg-gray-400'
            }`}
          />
