@@ -29,12 +29,24 @@ const SurveyPresentation = () => {
         </>
       ),
       icon: (
-       <img 
-         src="/animations/family.gif"
-         alt="Family animation"
-         className="w-[150px] h-[150px] object-contain"
-       />
-     ),
+        <div className="flex items-center space-x-8"> {/* Container for all animations */}
+          <img 
+            src="/animations/child.gif"
+            alt="Fam3 animation"
+            className="w-[150px] h-[150px] object-contain"
+          />
+          <img 
+            src="/animations/family.gif"
+            alt="Family animation"
+            className="w-[150px] h-[150px] object-contain"
+          />
+          <img 
+            src="/animations/fam3.gif"
+            alt="Fam2 animation"
+            className="w-[150px] h-[150px] object-contain"
+          />
+        </div>
+      ),
      component: null
    },
    {
@@ -170,9 +182,9 @@ const SurveyPresentation = () => {
     }`}
   >
     <div className="flex items-center">
-      <div className="w-13 h-13 mr-3">
+      <div className="w-12 h-12 mr-3">
         <img 
-          src={`/animations/${index === 0 ? 'family' : index === 1 ? 'couple' : index === 2 ? 'enfants' : 'tache'}.gif`}
+          src={`/animations/${index === 0 ? 'family' : index === 1 ? 'couple' : index === 2 ? 'enfants': index === 3 ? 'tache' : 'question'}.gif`}
           alt={section.title}
           className="w-full h-full object-contain"
         />

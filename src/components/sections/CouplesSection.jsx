@@ -14,6 +14,7 @@ import {
 } from 'recharts';
 import { coupleData } from '../../utils/chartData';
 import { useInView } from '../../hooks/useInView';
+import { PieChart, Pie, Cell } from 'recharts';
 
 // Animation styles
 const styles = {
@@ -88,7 +89,10 @@ const CouplesSection = () => {
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="age" />
         <YAxis domain={[0, 100]} />
-        <Tooltip />
+        <Tooltip 
+        formatter={(value) => `${value}%`}
+        labelFormatter={(label) => `${label}`}
+        />
         <Legend />
         <Bar 
           dataKey="femmes" 
@@ -96,6 +100,7 @@ const CouplesSection = () => {
           fill="#FF6B35"
           animationDuration={1500}
           animationBegin={0}
+          formatter={(value) => `${value}%`}
         />
         <Bar 
           dataKey="hommes" 
@@ -110,8 +115,8 @@ const CouplesSection = () => {
   
   <AnimatedSection delay={200}> {/* Increased delay to account for both bars animation */}
     <div className="mt-8 text-gray-700 space-y-4">
-      <p>À Genève, 68% des individus âgés de 18 à 80 ans sont en couple. Les femmes âgées de 35 à 44 ans sont celles qui sont le plus souvent en couple (81%). Ce taux descend à 51% pour les femmes de 65 à 80 ans.</p>
-      <p>Il y a une inversion du rapport entre hommes et femmes en couple aux deux extrémités des groupes d'âge. Parmi les 25-34 ans, une proportion significativement plus élevée de femmes que d'hommes sont en couple (75% des femmes contre 58% des hommes). À l'inverse, chez les 65-80 ans, ce sont les hommes qui sont plus fréquemment en couple (76% des hommes contre 51% des femmes).</p>
+      <p>À Genève, 72% des individus âgés de 18 à 80 ans sont en couple. Les femmes âgées de 35 à 44 ans sont celles qui sont le plus souvent en couple (...%). Ce taux descend à ...% pour les femmes de 65 à 80 ans.</p>
+      <p>Il y a une inversion du rapport entre hommes et femmes en couple aux deux extrémités des groupes d'âge. Parmi les 25-34 ans, une proportion significativement plus élevée de femmes que d'hommes sont en couple (...% des femmes contre ...% des hommes). À l'inverse, chez les 65-80 ans, ce sont les hommes qui sont plus fréquemment en couple (...% des hommes contre ...% des femmes).</p>
     </div>
   </AnimatedSection>
 </div>
@@ -125,24 +130,32 @@ const CouplesSection = () => {
         </AnimatedSection>
         
         <div className="h-[400px] w-full">
-          <ResponsiveContainer>
-            <BarChart 
-              data={isInView2 ? coupleData.ageGap : []}
-              layout="vertical"
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis type="number" domain={[0, 100]} />
-              <YAxis dataKey="category" type="category" width={150} />
-              <Tooltip />
-              <Bar 
-                dataKey="value" 
-                fill="#4169E1"
-                animationDuration={1500}
-                animationBegin={0}
-              />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
+  <ResponsiveContainer>
+    <PieChart>
+      <Pie
+        data={isInView2 ? coupleData.ageGap : []}
+        dataKey="value"
+        nameKey="category"
+        cx="50%"
+        cy="50%"
+        outerRadius={150}
+        startAngle={90}
+        endAngle={-270}
+        animationBegin={0}
+        animationDuration={2000}
+      >
+        {coupleData.ageGap.map((entry, index) => (
+          <Cell 
+            key={`cell-${index}`} 
+            fill={index === 0 ? '#4169E1' : index === 1 ? '#32CD32' : '#FF6B35'} 
+          />
+        ))}
+      </Pie>
+      <Tooltip formatter={(value) => `${value}%`} />
+      <Legend />
+    </PieChart>
+  </ResponsiveContainer>
+</div>
         
         <AnimatedSection delay={200}>
           <div className="mt-8 text-gray-700 space-y-4">
@@ -169,7 +182,10 @@ const CouplesSection = () => {
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis type="number" domain={[0, 100]} />
               <YAxis dataKey="ageGroup" type="category" />
-              <Tooltip />
+              <Tooltip 
+              formatter={(value) => `${value}%`}
+              labelFormatter={(label) => `${label}`}
+              />
               <Legend />
               <Bar 
                 dataKey="marie" 
@@ -178,6 +194,7 @@ const CouplesSection = () => {
                 stackId="stack"
                 animationDuration={1500}
                 animationBegin={0}
+                formatter={(value) => `${value}%`}
               />
               <Bar 
                 dataKey="nonMarie" 
@@ -186,6 +203,7 @@ const CouplesSection = () => {
                 stackId="stack"
                 animationDuration={1500}
                 animationBegin={300}
+                formatter={(value) => `${value}%`}
               />
             </BarChart>
           </ResponsiveContainer>
@@ -219,25 +237,31 @@ const CouplesSection = () => {
                 interval={0}
               />
               <YAxis domain={[0, 30]} />
-              <Tooltip />
+              <Tooltip 
+              formatter={(value) => `${value}%`}
+              labelFormatter={(label) => `${label}`}
+              />
               <Legend />
               <Bar 
                 dataKey="Avant 2013" 
                 fill="#32CD32"
                 animationDuration={1500}
                 animationBegin={0}
+                formatter={(value) => `${value}%`}
               />
               <Bar 
                 dataKey="2013-2018" 
                 fill="#4169E1"
                 animationDuration={1500}
                 animationBegin={300}
+                formatter={(value) => `${value}%`}
               />
               <Bar 
                 dataKey="2019-2023" 
                 fill="#FF6B35"
                 animationDuration={1500}
                 animationBegin={600}
+                formatter={(value) => `${value}%`}
               />
             </BarChart>
           </ResponsiveContainer>

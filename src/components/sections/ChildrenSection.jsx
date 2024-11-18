@@ -66,31 +66,38 @@ const ChildrenSection = () => {
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis type="number" domain={[0, 100]} />
               <YAxis dataKey="group" type="category" width={150} />
-              <Tooltip />
+              <Tooltip 
+              formatter={(value) => `${value}%`}
+              labelFormatter={(label) => `${label}`}
+              />
               <Legend />
               <Bar 
                 dataKey="0 enfant" 
                 fill="#FF6B35"
                 animationDuration={1500}
                 animationBegin={0}
+                formatter={(value) => `${value}%`}
               />
               <Bar 
                 dataKey="1 enfant" 
                 fill="#4169E1"
                 animationDuration={1500}
                 animationBegin={300}
+                formatter={(value) => `${value}%`}
               />
               <Bar 
                 dataKey="2 enfants" 
                 fill="#32CD32"
                 animationDuration={1500}
                 animationBegin={600}
+                formatter={(value) => `${value}%`}
               />
               <Bar 
                 dataKey="3 enfants ou plus" 
                 fill="#FFD700"
                 animationDuration={1500}
                 animationBegin={900}
+                formatter={(value) => `${value}%`}
               />
             </BarChart>
           </ResponsiveContainer>
@@ -98,7 +105,7 @@ const ChildrenSection = () => {
         
         <AnimatedSection delay={200}>
           <div className="mt-8 text-gray-700 space-y-4">
-            <p>En 2023, le nombre d'enfants souhaités par les personnes âgées de 20 à 35 ans (sans enfants) est proportionnel au nombre d'enfants des individus âgés de 50 à 65 ans. La majorité des 20-35 ans souhaitent avoir deux enfants (47%), tandis que ceux ne désirant qu'un seul enfant constituent la plus faible proportion (12%).</p>
+            <p>En 2023, le nombre d'enfants souhaités par les personnes âgées de 20 à 35 ans (sans enfants) est proportionnel au nombre d'enfants des individus âgés de 50 à 65 ans. La majorité des 20-35 ans souhaitent avoir deux enfants (43%), tandis que ceux ne désirant qu'un seul enfant constituent la plus faible proportion (9%).</p>
           </div>
         </AnimatedSection>
       </div>
@@ -120,31 +127,38 @@ const ChildrenSection = () => {
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis type="number" domain={[0, 100]} />
               <YAxis dataKey="year" type="category" width={150} />
-              <Tooltip />
+              <Tooltip 
+              formatter={(value) => `${value}%`}
+              labelFormatter={(label) => `${label}`}
+              />
               <Legend />
               <Bar 
                 dataKey="0 enfant" 
                 fill="#FF6B35"
                 animationDuration={1500}
                 animationBegin={0}
+                formatter={(value) => `${value}%`}
               />
               <Bar 
                 dataKey="1 enfant" 
                 fill="#4169E1"
                 animationDuration={1500}
                 animationBegin={300}
+                formatter={(value) => `${value}%`}
               />
               <Bar 
                 dataKey="2 enfants" 
                 fill="#32CD32"
                 animationDuration={1500}
                 animationBegin={600}
+                formatter={(value) => `${value}%`}
               />
               <Bar 
                 dataKey="3 enfants ou plus" 
                 fill="#FFD700"
                 animationDuration={1500}
                 animationBegin={900}
+                formatter={(value) => `${value}%`}
               />
             </BarChart>
           </ResponsiveContainer>
@@ -152,7 +166,7 @@ const ChildrenSection = () => {
         
         <AnimatedSection delay={200}>
           <div className="mt-8 text-gray-700 space-y-4">
-            <p>Le nombre d'enfants souhaités a évolué en Suisse entre 2013 et 2023. La transformation la plus marquante concerne la proportion de personnes ne souhaitant pas avoir d'enfants, qui est passée de 9% en 2013 à 22% en 2023.</p>
+            <p>Le nombre d'enfants souhaités a évolué en Suisse entre 2013 et 2023. La transformation la plus marquante concerne la proportion de personnes ne souhaitant pas avoir d'enfants, qui est passée de 4% en 2013 à 17% en 2023.</p>
             <p>Cette tendance générale à la baisse du souhait d'enfants se reflète dans toutes les configurations, sauf pour ceux qui souhaitent un seul enfant, où une augmentation est observée entre 2013 et 2023.</p>
           </div>
         </AnimatedSection>
@@ -162,7 +176,7 @@ const ChildrenSection = () => {
       <div ref={ref3}>
         <AnimatedSection>
           <h3 className="text-xl font-semibold mb-6">
-            Effet de la naissance d'un enfant sur la satisfaction de vie et les perspectives professionnelles
+            Effet attendu de la naissance d'un enfant sur la satisfaction de vie et les perspectives professionnelles
           </h3>
         </AnimatedSection>
         
@@ -175,7 +189,10 @@ const ChildrenSection = () => {
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis type="number" domain={[0, 100]} />
               <YAxis dataKey="aspect" type="category" width={200} />
-              <Tooltip />
+              <Tooltip 
+              formatter={(value) => `${value}%`}
+              labelFormatter={(label) => `${label}`}
+              />
               <Legend />
               <Bar 
                 dataKey="ameliore" 
@@ -184,14 +201,16 @@ const ChildrenSection = () => {
                 stackId="stack"
                 animationDuration={1500}
                 animationBegin={0}
+                formatter={(value) => `${value}%`}
               />
               <Bar 
                 dataKey="stable" 
-                name="Stable"
+                name="Neutre"
                 fill="#4169E1"
                 stackId="stack"
                 animationDuration={1500}
                 animationBegin={300}
+                formatter={(value) => `${value}%`}
               />
               <Bar 
                 dataKey="deteriore" 
@@ -200,6 +219,7 @@ const ChildrenSection = () => {
                 stackId="stack"
                 animationDuration={1500}
                 animationBegin={600}
+                formatter={(value) => `${value}%`}
               />
             </BarChart>
           </ResponsiveContainer>
@@ -207,7 +227,7 @@ const ChildrenSection = () => {
         
         <AnimatedSection delay={200}>
           <div className="mt-8 text-gray-700 space-y-4">
-            <p>Dans le canton de Genève, la majorité des personnes âgées de 25 à 39 ans sans enfants estiment que devenir parents améliorerait leur satisfaction de vie (55%). Cependant, 43% de ces individus jugent que l'arrivée d'un enfant nuirait à leurs perspectives professionnelles.</p>
+            <p>Dans le canton de Genève, la majorité des personnes âgées de 25 à 39 ans sans enfants estiment que devenir parents améliorerait leur satisfaction de vie (51%). Cependant, 39% de ces individus jugent que l'arrivée d'un enfant nuirait à leurs perspectives professionnelles.</p>
           </div>
         </AnimatedSection>
       </div>
